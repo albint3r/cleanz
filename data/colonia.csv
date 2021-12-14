@@ -1,0 +1,921 @@
+,colonia
+0,18 de Marzo
+1,27 de Septiembre
+2,5 de Diciembre
+3,5 de Mayo
+4,8 de Julio 1a Secc
+5,8 de Julio 2a Secc
+6,Acatlan de Juárez
+7,Acueducto San Agustín
+8,Aeropuerto
+9,Agraria
+10,Agrícola
+11,Agua Azul
+12,Agua Blanca
+13,Agua Blanca Industrial
+14,Agua Blanca Sur
+15,Agua Fría
+16,Agua Zarca
+17,Agustin Yánez
+18,Ahualulco de Mercado Centro
+19,Ajijic Centro
+20,Alameda
+21,Alamedas de Zalatitan
+22,Alborada
+23,Alcalde Barranquitas
+24,Aldama Tetlán
+25,Altagracia
+26,Altamira
+27,Altavista
+28,Altavista Residencial
+29,Altus Bosques
+30,Altus Quintas
+31,Amapas
+32,Americana
+33,Américas Colomos
+34,Analco
+35,Antares
+36,Aramara
+37,Arauca
+38,Arboleda Bosques de Santa Anita
+39,Arboledas
+40,Arboledas 1a Secc
+41,Arboledas 2a Secc
+42,Arboledas Del Sur
+43,Arboledas de San Gaspar
+44,Arcos Vallarta
+45,Arcos de Guadalupe
+46,Arcos de Zalatitan II
+47,Arcos de Zapopan 1a Secc
+48,Arcos de Zapopan 2a Secc
+49,Arenales Tapatíos
+50,Armonía Hábitat
+51,Artesanos
+52,Atemajac
+53,Atemajac Del Valle
+54,Atemajac de Brizuela
+55,Atlas
+56,Atlas Chapalita
+57,Atlas Colomos
+58,Atotonilco El Alto Centro
+59,Auditorio
+60,Autocinema
+61,Ayamonte
+62,Ayuntamiento
+63,Azaleas
+64,Balcones Del 4
+65,Balcones Del Salto
+66,Balcones de Huentitán
+67,Balcones de La Calera
+68,Balcones de La Cantera
+69,Balcones de Oblatos
+70,Balcones de Santa Anita
+71,Balcones de Santa Maria
+72,Banus
+73,Barajas Villaseñor San Pablo
+74,Barra de Navidad
+75,Barranquitas
+76,Batallón de San Patricio
+77,Belenes Norte
+78,Belenes U de G
+79,Belisario Dominguez
+80,Benito Juárez
+81,Bernalejo
+82,Bethel
+83,Blanco y Cuellar
+84,Bonanza Residencial
+85,Bosque Escondido
+86,Bosque del Progreso
+87,Bosques Del Centinela I
+88,Bosques Del Valle
+89,Bosques de La Primavera
+90,Bosques de La Victoria
+91,Bosques de San Gonzalo
+92,Bosques de San Isidro
+93,Bosques de Santa Anita
+94,Brisas de Chapala
+95,Bucerías Centro
+96,Buenavista
+97,Buenos Aires
+98,Bugambilias
+99,Bugambilias Country
+100,Cajititlán
+101,Callejón del Parque
+102,Camichin Vallarta
+103,Camino Real
+104,Camino Real A Santa Anita
+105,Camino Real de Colima
+106,Campestre Las Palomas
+107,Campestre los Pinos
+108,Campo Lago
+109,Campo Nogal
+110,Campo Real
+111,Campo Sur
+112,Canal 58
+113,Cantarranas
+114,Careyes
+115,Carlos Rivera
+116,Cañadas de San Lorenzo
+117,Cerrito de La Reyna
+118,Cerro Del 4
+119,Cerro Del Tesoro
+120,Chantepec
+121,Chapala Centro
+122,Chapala Haciendas
+123,Chapalita
+124,Chapalita Inn
+125,Chapalita Oriente
+126,Chapalita Sur
+127,Chapalita de Occidente
+128,Chapalita las Fuentes
+129,Chapultepec Country
+130,Chulavista
+131,Cima Del Sol
+132,Circunvalación Américas
+133,Circunvalación Belisario
+134,Circunvalación Oblatos
+135,Circunvalación Vallarta
+136,Ciudad Bugambilia
+137,Ciudad Del Sol
+138,Ciudad Granja
+139,Ciudad de Puerto Vallarta
+140,Ciudad de los Niños
+141,Club de Golf Santa Anita
+142,Colegio Del Aire
+143,Colina Universitaria
+144,Colina de los Robles
+145,Colinas Del Centinela
+146,Colinas Del Rey
+147,Colinas Del Valle
+148,Colinas de Huentitán
+149,Colinas de La Normal
+150,Colinas de La Primavera
+151,Colinas de Las Águilas
+152,Colinas de San Javier
+153,Colinas de San Javier 2a Secc
+154,Colinas de Santa Anita
+155,Colomos Independencia
+156,Colon
+157,Colon Industrial y Anexo
+158,Colonial Tlaquepaque
+159,Colonos Patria
+160,Conchas Chinas
+161,Conjunto Zapopan
+162,Constitución
+163,Constituyentes
+164,Copalita
+165,Cortijo de San Agustin
+166,Costa Coral
+167,Costalegre
+168,Coto Del Carmen
+169,Coto Del Rey
+170,Coto Nueva Galicia
+171,Coto San Francisco
+172,Country Club
+173,Coyula
+174,Cuauhtémoc
+175,Cumbres
+176,Cuyutlan
+177,De las Juntas Delegación
+178,Del Bosque
+179,Del Carmen
+180,Del Fresno
+181,Del Mar
+182,Del Pilar Residencial
+183,Del Sur
+184,Delfines
+185,Diana Nature Residencial
+186,Diaz Ordaz
+187,Don Bosco Vallarta
+188,Dr. Atl
+189,Echeverría
+190,Ecológica Seattle
+191,Educación
+192,Educadores Jaliscienses
+193,El Alcázar (Casa Fuerte)
+194,El Arenal
+195,El Bajío
+196,El Calvario
+197,El Campanario
+198,El Canton
+199,El Capulín
+200,El Centinela
+201,El Cerro
+202,El Colli 1a Secc
+203,El Colli 2a Secc
+204,El Colli CTM
+205,El Colli Urbano
+206,El Dean
+207,El Fortín
+208,El Fresno
+209,El Manantial
+210,El Mante
+211,El Mirador
+212,El Moral
+213,El Olivo Coto Residencial
+214,El Palmar de Aramara
+215,El Palmar del Progreso
+216,El Palomar
+217,El Palomar Secc Balcones
+218,El Palomar Secc Bosques
+219,El Palomar Secc Cañadas
+220,El Palomar Secc Jockey Club
+221,El Palomar Secc Panorámica
+222,El Paraíso
+223,El Quince Centro
+224,El Real
+225,El Refugio
+226,El Retiro
+227,El Rosario
+228,El Sabino
+229,El Salto Centro
+230,El Santuario
+231,El Sáuz
+232,El Sáuz Infonavit
+233,El Tapatío
+234,El Tuito
+235,El Vado
+236,El Verde
+237,El Vergel
+238,El Vigía
+239,El Zalate
+240,El Zapote Del Valle
+241,Emiliano Zapata
+242,Encarnación de Diaz
+243,Esperanza
+244,Estadio
+245,Estadio Poniente
+246,Etzatlan Centro
+247,Eulogio Parra
+248,Ferrocarril
+249,Flores Magón I Fracc
+250,Fovissste 96
+251,Francisco I. Madero 2da. Sección
+252,Francisco Sarabia
+253,Francisco Silva Romero
+254,Francisco Villa
+255,Fuentes Del Nilo
+256,Garza Blanca
+257,Gaviotas
+258,Geovillas del Real
+259,Girasoles Acueducto
+260,Girasoles Elite
+261,Glorias Del Colli
+262,Gral. Real
+263,Guadalajara Centro
+264,Guadalajara Oriente
+265,Guadalajarita
+266,Guadalupana
+267,Guadalupe
+268,Guadalupe Inn
+269,Guadalupe Sur
+270,Guadalupe Victoria
+271,Guayabitos 1ra Sección
+272,Gustavo Diaz Ordaz
+273,Hacienda Del Real
+274,Hacienda Del Tepeyac
+275,Hacienda La Candelaria
+276,Hacienda La Herradura
+277,Hacienda San Agustin
+278,Hacienda Santa Fe
+279,Hacienda de Las Lomas
+280,Hacienda de Tlaquepaque
+281,Hacienda de Vidrios
+282,Hacienda los Eucaliptos
+283,Haciendas Del Pitilla
+284,Haciendas Del Sur
+285,Haciendas Del Valle
+286,Haciendas de San Jose
+287,Hipódromo
+288,Hogares de Nuevo México
+289,Huaxtla
+290,Huentitán El Alto
+291,Huentitán El Bajo
+292,Huertas Productivas
+293,Independencia
+294,Independencia Infonavit
+295,Independencia Oriente
+296,Independencia Poniente
+297,Infonavit Estadio
+298,Insurgentes 1a Secc
+299,Italia Providencia
+300,Ixtapa
+301,Ixtapa Centro
+302,Ixtlahuacan de los Membrillos
+303,Jacarandas
+304,Jalisco
+305,Jardines Alcalde
+306,Jardines Del Bosque
+307,Jardines Del Country
+308,Jardines Del Edén
+309,Jardines Del Nilo
+310,Jardines Del Rosario
+311,Jardines Del Sol
+312,Jardines Del Sur
+313,Jardines Del Tepeyac
+314,Jardines Del Valle
+315,Jardines Del Valle de La Victoria
+316,Jardines Del Vergel
+317,Jardines El Sauz
+318,Jardines Seattle Unidad
+319,Jardines Universidad
+320,Jardines Vallarta
+321,Jardines de Chapalita
+322,Jardines de Guadalupe
+323,Jardines de Ixtepete
+324,Jardines de La Alameda
+325,Jardines de La Calera
+326,Jardines de La Cruz
+327,Jardines de La Patria
+328,Jardines de La Paz
+329,Jardines de La Primavera
+330,Jardines de La Reyna
+331,Jardines de Miraflores
+332,Jardines de Nuevo México
+333,Jardines de Plaza Del Sol
+334,Jardines de Providencia
+335,Jardines de San Francisco
+336,Jardines de San Ignacio
+337,Jardines de San Jose
+338,Jardines de San Sebastián
+339,Jardines de Santa Ana
+340,Jardines de Santa Isabel
+341,Jardines de Tlajomulco
+342,Jardines de Tonala
+343,Jardines de los Arcos
+344,Jardines de los Historiadores
+345,Jardines de los Poetas
+346,Jardín Real
+347,Jardín de Las Moras
+348,Joaquín Aarón
+349,Jocotan
+350,Jocotepec Centro
+351,Juan Gil Preciado
+352,Juan Manuel Vallarta
+353,Juanacatlan
+354,La Algodonal
+355,La Arbolada
+356,La Arboleda
+357,La Aurora
+358,La Barca Centro
+359,La Calera
+360,La Calerilla
+361,La Calma
+362,La Calma 2a Secc
+363,La Cantera
+364,La Capacha
+365,La Casita
+366,La Castilla
+367,La Cuchilla (Extramuros de Tesistán)
+368,La Duraznera
+369,La Esperanza
+370,La Federacha Secc Calzada
+371,La Floresta
+372,La Florida
+373,La Giralda
+374,La Grana
+375,La Haciendita
+376,La Higuera
+377,La Laja
+378,La Loma
+379,La Magdalena
+380,La Marina
+381,La Mina
+382,La Mojonera
+383,La Moraleja
+384,La Nogalera
+385,La Noria
+386,La Normal
+387,La Palmita
+388,La Patria Universidad
+389,La Paz
+390,La Perla
+391,La Presa
+392,La Primavera
+393,La Providencia
+394,La Purísima
+395,La Romana
+396,La Soledad Infonavit
+397,La Tijera
+398,La Troje
+399,La Unión Del 4
+400,La Venta Del Astillero
+401,La cima de Zapopan
+402,Ladrillera
+403,Ladrón de Guevara
+404,Lafayette
+405,Lago Nogal
+406,Lagos Del Country 2a Secc
+407,Lagos de Moreno Centro
+408,Lagos de Oriente
+409,Laguna del Valle
+410,Las Agujas
+411,Las Alamedas
+412,Las Bóvedas
+413,Las Cañadas
+414,Las Conchas
+415,Las Fuentes
+416,Las Garzas
+417,Las Glorias
+418,Las Huertas
+419,Las Juntas
+420,Las Juntitas
+421,Las Liebres
+422,Las Lomas Club Golf
+423,Las Mojoneras
+424,Las Moras
+425,Las Palomas
+426,Las Pintas
+427,Las Pintas de Abajo
+428,Las Pintitas Centro
+429,Las Pirámides
+430,Las Torres
+431,Las Villas
+432,Las Águilas
+433,Leyes de Reforma
+434,Libertad
+435,Libertador Miguel Hidalgo
+436,Linda Vista Océano
+437,Lindavista
+438,Loma Blanca
+439,Loma Bonita
+440,Loma Bonita 1a Sección
+441,Loma Bonita Ejidal
+442,Loma Bonita Sur
+443,Loma Dorada Secc A
+444,Loma Dorada Secc B
+445,Loma Dorada Secc C
+446,Loma Dorada Secc D
+447,Loma Real
+448,Lomas Altas
+449,Lomas Del 4
+450,Lomas Del Aeropuerto
+451,Lomas Del Batan
+452,Lomas Del Bosque
+453,Lomas Del Country
+454,Lomas Del Gallo
+455,Lomas Del Paradero
+456,Lomas Del Paraíso
+457,Lomas Del Refugio
+458,Lomas Del Seminario
+459,Lomas Del Sur
+460,Lomas Del Tapatío
+461,Lomas Del Valle
+462,Lomas Independencia
+463,Lomas Santa Rita
+464,Lomas Universidad
+465,Lomas de Coapinole
+466,Lomas de Guadalupe
+467,Lomas de Guevara
+468,Lomas de Huentitán
+469,Lomas de Independencia
+470,Lomas de La Primavera
+471,Lomas de La Soledad
+472,Lomas de La Victoria
+473,Lomas de Mismaloya
+474,Lomas de Polanco
+475,Lomas de Providencia
+476,Lomas de San Agustin
+477,Lomas de San Eugenio
+478,Lomas de San Gonzalo
+479,Lomas de San Isidro
+480,Lomas de San Miguel
+481,Lomas de San Nicolás
+482,Lomas de San Pedrito
+483,Lomas de Santa Anita
+484,Lomas de Tabachines
+485,Lomas de Tejeda
+486,Lomas de Tlaquepaque
+487,Lomas de Tonala
+488,Lomas de Zapopan
+489,Lopez Portillo
+490,Loreto
+491,Los Abetos
+492,Los Almendros
+493,Los Altos
+494,Los Altos Sur
+495,Los Arcos
+496,Los Arcos Sur
+497,Los Arrayanes
+498,Los Cajetes
+499,Los Camichines I
+500,Los Cantaros
+501,Los Cedros
+502,Los Ciruelos
+503,Los Colomos
+504,Los Colorines
+505,Los Fresnos
+506,Los Gavilanes
+507,Los Gavilanes Poniente
+508,Los Girasoles
+509,Los Guayabos
+510,Los Hornos
+511,Los Laureles
+512,Los Maestros
+513,Los Meseros
+514,Los Olivos
+515,Los Pinos
+516,Los Pinos Campestre
+517,Los Portales
+518,Los Puestos
+519,Los Robles
+520,Los Sauces
+521,Los Tamarindos
+522,Los Tréboles
+523,Los Tules
+524,Lázaro Cárdenas
+525,López Cotilla
+526,Madeiras
+527,Magaña
+528,Mariano Otero
+529,Marina Vallarta
+530,Mascota
+531,Mazamitla
+532,Medrano
+533,Mesa Colorada Poniente
+534,Mesa de los Ocotes
+535,Mexicaltzingo
+536,Mezquitan
+537,Mezquitan Country
+538,Mezquite Grande
+539,Miguel Hidalgo
+540,Miguel de La Madrid Hurtado
+541,Milpillas
+542,Mirador
+543,Mirador Del Sol
+544,Mirador de La Cañada
+545,Mirador de San Isidro
+546,Mirador del Tesoro
+547,Miraflores
+548,Mirage
+549,Miramar
+550,Miravalle
+551,Misión Cantera
+552,Misión Capistrano
+553,Misión Del Bosque
+554,Misión Del Campanario
+555,Misión Del Valle
+556,Misión Jardines
+557,Misión Magnolia
+558,Misión de San Isidro
+559,Moctezuma
+560,Moctezuma Poniente
+561,Moderna
+562,Mojoneras
+563,Monraz
+564,Montesori
+565,Monumental
+566,Morelos
+567,Natura Bosque Residencial
+568,Nextipac
+569,Niños Heroes
+570,Nueva España
+571,Nueva Galicia
+572,Nueva Galicia Residencial
+573,Nueva Primavera
+574,Nuevo México
+575,Nuevo Santa Maria
+576,Nuevo Vallarta
+577,Oblatos
+578,Obrera
+579,Obrera Centro
+580,Ojo de Agua
+581,Olímpica
+582,Paisajes del Tesoro
+583,Palma Real
+584,Palmira
+585,Panorámica Huentitán
+586,Paraíso
+587,Paraísos Del Colli
+588,Parque Industrial El Álamo
+589,Parque Real
+590,Parque Regency
+591,Parque Tlaquepaque
+592,Parque de La Castellana
+593,Parques Del Bosque
+594,Parques Del Centinela
+595,Parques Del Nilo
+596,Parques Guadalupe
+597,Parques de Colon
+598,Parques de Santa Cruz Del Valle
+599,Parques de Santa Maria
+600,Parques de Tesistán
+601,Parques de Zapopan
+602,Parques del Castillo
+603,Parques las Palmas
+604,Paseos Del Sol 1a Secc
+605,Paseos Del Sol 3a Secc
+606,Paseos Lago
+607,Paseos Universidad
+608,Paseos Universidad II
+609,Paseos de Santiago
+610,Patria
+611,Patria Nueva
+612,Pdte Benito Juárez
+613,Pedregal del Bosque
+614,Penal
+615,Periquera
+616,Pinar de La Calma
+617,Pinar de La Venta
+618,Pinar de las Palomas
+619,Pitillal Centro
+620,Plan de Ayala
+621,Plaza Del Sol
+622,Plaza Guadalupe
+623,Plutarco Elias Calles 1
+624,Polanco
+625,Polanquito
+626,Pontevedra
+627,Popular
+628,Popular Hornos
+629,Portillo López
+630,Postes Cuates (federalismo)
+631,Praderas de Tonallan
+632,Prados Tepeyac
+633,Prados Vallarta
+634,Prados de Guadalupe
+635,Prados de Providencia
+636,Prados de San Ignacio
+637,Prados de Tlaquepaque
+638,Primavera
+639,Progreso
+640,Providencia 1a Secc
+641,Providencia 2a Secc
+642,Providencia 3a Secc
+643,Providencia 4a Secc
+644,Providencia 5a Secc
+645,Pueblito Del Sol
+646,Pueblo Bonito
+647,Puente Grande
+648,Puente Viejo
+649,Puerta Aqua
+650,Puerta Del Roble
+651,Puerta Plata
+652,Puerta de Hierro
+653,Puerta de Llano
+654,Puerta del Bosque
+655,Puerta del Sol
+656,Puerta del Valle
+657,Puertas Del Tule
+658,Puerto Vallarta Centro
+659,Quinta Del Federalismo
+660,Quinta Velarde
+661,Quintas del Bosque
+662,Ramblases
+663,Rancho Alegre
+664,Rancho Blanco
+665,Rancho Contento
+666,Rancho Grande
+667,Rancho La Cruz
+668,Rancho Nuevo
+669,Real Del Bosque
+670,Real Del Parque
+671,Real Del Valle
+672,Real Patria
+673,Real San Bernardo
+674,Real Vallarta
+675,Real de Valdepeñas
+676,Real del Bosque
+677,Real del Camichin
+678,Reforma
+679,Reforma Centro
+680,Refugio Del Valle
+681,Residencial Camichines
+682,Residencial Chapalita
+683,Residencial Cordilleras
+684,Residencial Del Bosque
+685,Residencial Del Parque
+686,Residencial El Tapatío
+687,Residencial Fluvial Vallarta
+688,Residencial Jardines Del Sur
+689,Residencial Juan Manuel
+690,Residencial La Cruz
+691,Residencial La Estancia
+692,Residencial La Soledad
+693,Residencial Loma Bonita
+694,Residencial Moctezuma
+695,Residencial Poniente
+696,Residencial Revolución
+697,Residencial San Isidro
+698,Residencial Santa Fe
+699,Residencial Victoria
+700,Residencial los Frailes
+701,Revolución
+702,Revolución Jardín
+703,Ribera Del Pilar
+704,Ricardo Flores Magón Poniente
+705,Rinconada Del Arroyo
+706,Rinconada Del Parque
+707,Rinconada Del Sol
+708,Rinconada Del Valle
+709,Rinconada Santa Anita
+710,Rinconada Santa Rita
+711,Rinconada de La Calma
+712,Rinconada de Los Fresnos
+713,Rinconada de las Azaleas
+714,Rinconadas Tabachines
+715,Rinconadas de las Palmas
+716,Rincón del Cielo
+717,Rio Blanco
+718,Rojas Ladrón de Guevara
+719,Royal Country
+720,Sagrada Familia
+721,San Agustin
+722,San Andres
+723,San Andres Gigantes
+724,San Antonio
+725,San Antonio Tlayacapan
+726,San Bernardo
+727,San Carlos
+728,San Diego
+729,San Elias
+730,San Esteban
+731,San Eugenio
+732,San Francisco
+733,San Francisco Tesistán
+734,San Francisco de La Soledad
+735,San Gaspar
+736,San Isidro
+737,San Isidro Ejidal
+738,San Isidro Mazatepec
+739,San Jose Del Castillo
+740,San Jose Del Tajo
+741,San Jose Del Valle
+742,San Jose Ejidal
+743,San Jose Rio Verde
+744,San Juan
+745,San Juan Bosco
+746,San Juan Cosala
+747,San Juan de Dios
+748,San Juan de Ocotan
+749,San Marcos
+750,San Martin
+751,San Martin Del Tajo
+752,San Martin de las Flores de Abajo
+753,San Miguel Cuyutlan
+754,San Miguel Residencial
+755,San Miguel de Huentitán El Alto 1a Secc
+756,San Miguel de La Colina
+757,San Miguel de La Punta
+758,San Miguel de Mezquitan
+759,San Patricio O Melaque
+760,San Pedrito
+761,San Pedro Tesistán
+762,San Rafael
+763,San Sebastianito
+764,San Sebastián El Grande
+765,San Vicente
+766,San Wenceslao
+767,Santa Ana Tepetitlán
+768,Santa Anita
+769,Santa Catalina
+770,Santa Catarina Centro
+771,Santa Cecilia
+772,Santa Cruz Del Astillero
+773,Santa Cruz Del Valle
+774,Santa Cruz de las Flores
+775,Santa Cruz de las Huertas
+776,Santa Eduwiges
+777,Santa Elena Alcalde
+778,Santa Elena de La Cruz
+779,Santa Fe
+780,Santa Isabel
+781,Santa Lucia
+782,Santa Margarita 1a Secc
+783,Santa Margarita Residencial
+784,Santa Maria
+785,Santa Maria Tequepexpan
+786,Santa Maria de Silo
+787,Santa María
+788,Santa Mónica
+789,Santa Paula
+790,Santa Rosa
+791,Santa Teresita
+792,Santibáñez
+793,Santillana Parque Residencial
+794,Seattle
+795,Sendero de Luna
+796,Sendero las Moras
+797,Senderos Del Valle
+798,Senderos de Monte Verde
+799,Sierra Del Mar
+800,Solares
+801,Sutaj
+802,Tabachines
+803,Tala
+804,Tala Centro
+805,Tapalpa
+806,Tateposco
+807,Tempisque
+808,Tepeyac
+809,Tepeyac Casino
+810,Tequila Centro
+811,Teretan
+812,Terralta
+813,Terranova
+814,Terrazas Monraz
+815,Tetlán
+816,Tetlán II
+817,Tetlán Rio Verde
+818,Teuchitlán
+819,Tizapan El Alto
+820,Tlajomulco de Zuñiga
+821,Tlaquepaque Centro
+822,Toluquilla
+823,Tonala
+824,Tonala Centro
+825,Tres Reyes
+826,Tulipanes
+827,Unidad Modelo
+828,Unidad Patria
+829,Universitaria
+830,Urbi Quinta
+831,Valentín Gómez Farias
+832,Vallarta 500
+833,Vallarta Cuauhtémoc
+834,Vallarta La Patria
+835,Vallarta Norte
+836,Vallarta Poniente
+837,Vallarta San Jorge
+838,Vallarta San Lucas
+839,Vallarta Sur
+840,Vallarta Universidad
+841,Valle Del Sol
+842,Valle Del Álamo
+843,Valle Dorado
+844,Valle Esmeralda
+845,Valle Imperial
+846,Valle Real
+847,Valle Verde
+848,Valle de Bugambilias
+849,Valle de La Misericordia
+850,Valle de San Isidro
+851,Valle de San Nicolás
+852,Valle de las Flores
+853,Valle de las Heras
+854,Verde Valle
+855,Versalles
+856,Vicente Guerrero
+857,Victor Hugo
+858,Vida Vallarta
+859,Villa Coral
+860,Villa Corona Centro
+861,Villa Fontana
+862,Villa Fontana Diamante
+863,Villa Hermosa
+864,Villa Magna
+865,Villa Obregón
+866,Villa Puerta Del Sol
+867,Villa Real
+868,Villa San Jorge
+869,Villa Santa Rita
+870,Villa Universitaria
+871,Villa de Guadalupe
+872,Villa de los Belenes
+873,Villa las Flores
+874,Villas Camino Real de Colima
+875,Villas Del Centinela
+876,Villas Del Country
+877,Villas Del Iztepete
+878,Villas Del Nilo
+879,Villas Del Tapatío
+880,Villas Del Tepeyac
+881,Villas Rio
+882,Villas Universidad
+883,Villas de Colon
+884,Villas de Guadalupe
+885,Villas de La Hacienda
+886,Villas de La Tijera
+887,Villas de San Agustin
+888,Villas de San Javier
+889,Villas de San Juan
+890,Villas de San Sebastián
+891,Villas de Santa Anita
+892,Villas de Tesistán
+893,Villas de Torremolinos
+894,Villas de Vallarta
+895,Villas de Zalatitan
+896,Villas de Zapopan
+897,Villas del Mar
+898,Villaseñor
+899,Virreyes Residencial
+900,Vista Hermosa
+901,Vista Providencia
+902,Vistas Del Centinela
+903,Vistas Del Sol
+904,Vistas de San Agustin
+905,Vistas del Valle
+906,Viveros del Valle
+907,Volcanes
+908,Volcán Del Colli
+909,Zapopan Centro
+910,Zapotlanejo
+911,Zona Hotelera Norte
+912,Zona Hotelera Sur
+913,Zona Industrial
+914,Zona Oblatos
+915,Zotogrande
+916,Álamo
+917,Álamo Industrial
+918,Álamo Oriente
+919,Álamos
