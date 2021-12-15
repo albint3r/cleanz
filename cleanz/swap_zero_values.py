@@ -68,17 +68,25 @@ def swap_zerovalues_to_mean(dataframe: pd.DataFrame, column_name: str, min_searc
         # Calculate the mean of the columns that have values
         mean_value = np.mean(dataframe.loc[(zone & zone_value_not_null), column_name])
 
-        # Change NaN values to zero = 0
-        if pd.isna(mean_value):
-            mean_value = 0
-
         try:
-            # This is the expected Path
-            dataframe.loc[(zone & zero_values_column), column_name] = np.round(mean_value)  # <- Round Result
-            msg = f'{zone_name}:..........{mean_value:.1f} m2'
+            # Change NaN values to zero = 0
+            if pd.isna(mean_value) and alternative_value_complete is None:
+                mean_value = 0
+                dataframe.loc[(zone & zero_values_column), column_name] = mean_value
+                msg = f'{zone_name}:..........{mean_value:.1f} m2'
+
+            # Update Nan Values by the Mean
+            elif pd.isna(mean_value) and alternative_value_complete is not None:
+                alternative_value = dataframe.loc[zone, alternative_value_complete]
+                dataframe.loc[(zone & zero_values_column), column_name] = alternative_value
+                msg = f'{zone_name}:..........{alternative_value} m2'
+
+            else:
+                dataframe.loc[(zone & zero_values_column), column_name] = np.round(mean_value)  # <- Round Result
+                msg = f'{zone_name}:..........{mean_value:.1f} m2'
 
         except ValueError:
-            # This is the path if the row is don't have more info to create the mean.
+            # Update Zero Values by 0 or Alternative Value.
             if alternative_value_complete is not None:
                 alternative_value = dataframe.loc[zone, alternative_value_complete]  # <- Select the alternative value
                 dataframe.loc[(zone & zero_values_column), column_name] = alternative_value
@@ -92,7 +100,7 @@ def swap_zerovalues_to_mean(dataframe: pd.DataFrame, column_name: str, min_searc
             print(msg)
 
     # Calculate again the 0 Values remaining in the DataFrame
-    corroborate_zero_val = dataframe[column_name] <= min_search_value # <- Corroborate the Cleaning Rows
+    corroborate_zero_val = dataframe[column_name] <= min_search_value  # <- Corroborate the Cleaning Rows
 
     # Count the Missing Data Again
     if doble_subset:

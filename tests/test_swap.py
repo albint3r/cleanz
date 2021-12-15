@@ -13,7 +13,7 @@ class TestSwapZeroValues(object):
         data = {'colonia': ['Puerta de Hierro', 'Puerta de Hierro', 'Puerta de Hierro', 'Loma Larga', 'Loma Larga',
                             'Loma Larga', 'Valle', 'Valle', 'zero_1', 'zero_2', 'Legacy', 'Legacy', 'Legacy', ],
                 'm2_terreno': [500, 510, 0, 200, 210, 0, 250, 0, 0, 100, 0, 0, 0],
-                'm2_const': [220, 230, 0, 220, 230, 0, 240, 0, 0, 0, 85, 85, 0],
+                'm2_const': [220, 230, 0, 200, 230, 0, 240, 0, 0, 0, 85, 85, 0],
                 'habitaciones': [3, 3, 0, 2, 2, 0, 2, 0, 0, 0, 2, 2, 0],
                 'banos': [3, 3, 0, 2, 2, 0, 2, 0, 0, 0, 2, 0, 2],
                 'autos': [3, 3, 0, 2, 2, 0, 2, 0, 0, 0, 2, 2, 0],
@@ -71,3 +71,135 @@ class TestSwapZeroValues(object):
         msg4 = f'Expected Value in {name4}:...{expected4} and the actual Result was:...{actual4}'
 
         assert actual4 == expected4, msg4
+
+    def test_swap_zero_const_not_alter_col(self, setup_df: pd.DataFrame):
+        """Test the m2 Const complete works correctly
+
+        Parameters
+        ----------
+        setup_df: pandas.DataFrame
+            Is the test tabular data for the tests.
+        """
+        # Create DataFrame to test
+        df = setup_df
+
+        # Total Zero Remaining Results expected : 1
+        actual = swap_zerovalues_to_mean(df, 'm2_const', min_search_value=10)
+        expected = 2
+        msg = f'Expected Value:...{expected} and the actual Result was:...{actual}'
+
+        assert actual == expected, msg
+
+        # Expected results : Puerta de Hiero
+        name1 = df.loc[2, 'colonia']
+        actual1 = df.loc[2, 'm2_const']
+        expected1 = 225
+        msg1 = f'Expected Value in {name1}:...{expected1} and the actual Result was:...{actual1}'
+
+        assert actual1 == expected1, msg1
+
+        # Expected results : Loma Larga
+        name2 = df.loc[5, 'colonia']
+        actual2 = df.loc[5, 'm2_const']
+        expected2 = 215
+        msg2 = f'Expected Value in {name2}:...{expected2} and the actual Result was:...{actual2}'
+
+        assert actual2 == expected2, msg2
+
+        # Expected results : Valle
+        name3 = df.loc[7, 'colonia']
+        actual3 = df.loc[7, 'm2_const']
+        expected3 = 240
+        msg3 = f'Expected Value in {name3}:...{expected3} and the actual Result was:...{actual3}'
+
+        assert actual3 == expected3, msg3
+
+        # Expected results : Zero1
+        name4 = df.loc[8, 'colonia']
+        actual4 = df.loc[8, 'm2_const']
+        expected4 = 0
+        msg4 = f'Expected Value in {name4}:...{expected4} and the actual Result was:...{actual4}'
+
+        assert actual4 == expected4, msg4
+
+        # Expected results : Zero2
+        name5 = df.loc[9, 'colonia']
+        actual5 = df.loc[9, 'm2_const']
+        expected5 = 0
+        msg5 = f'Expected Value in {name5}:...{expected5} and the actual Result was:...{actual5}'
+
+        assert actual5 == expected5, msg5
+
+        # Expected results : Legacy
+        name6 = df.loc[12, 'colonia']
+        actual6 = df.loc[12, 'm2_const']
+        expected6 = 85
+        msg6 = f'Expected Value in {name6}:...{expected6} and the actual Result was:...{actual6}'
+
+        assert actual6 == expected6, msg6
+
+    def test_swap_zero_const_alter_col(self, setup_df: pd.DataFrame):
+        """Test the m2 Const complete works correctly
+
+        Parameters
+        ----------
+        setup_df: pandas.DataFrame
+            Is the test tabular data for the tests.
+        """
+        # Create DataFrame to test
+        df = setup_df
+
+        # Total Zero Remaining Results expected : 1
+        actual = swap_zerovalues_to_mean(df, 'm2_const', min_search_value=10, alternative_value_complete='m2_terreno')
+        expected = 1
+        msg = f'Expected Value:...{expected} and the actual Result was:...{actual}'
+
+        assert actual == expected, msg
+
+        # Expected results : Puerta de Hiero
+        name1 = df.loc[2, 'colonia']
+        actual1 = df.loc[2, 'm2_const']
+        expected1 = 225
+        msg1 = f'Expected Value in {name1}:...{expected1} and the actual Result was:...{actual1}'
+
+        assert actual1 == expected1, msg1
+
+        # Expected results : Loma Larga
+        name2 = df.loc[5, 'colonia']
+        actual2 = df.loc[5, 'm2_const']
+        expected2 = 215
+        msg2 = f'Expected Value in {name2}:...{expected2} and the actual Result was:...{actual2}'
+
+        assert actual2 == expected2, msg2
+
+        # Expected results : Valle
+        name3 = df.loc[7, 'colonia']
+        actual3 = df.loc[7, 'm2_const']
+        expected3 = 240
+        msg3 = f'Expected Value in {name3}:...{expected3} and the actual Result was:...{actual3}'
+
+        assert actual3 == expected3, msg3
+
+        # Expected results : Zero1
+        name4 = df.loc[8, 'colonia']
+        actual4 = df.loc[8, 'm2_const']
+        expected4 = 0
+        msg4 = f'Expected Value in {name4}:...{expected4} and the actual Result was:...{actual4}'
+
+        assert actual4 == expected4, msg4
+
+        # Expected results : Zero2
+        name5 = df.loc[9, 'colonia']
+        actual5 = df.loc[9, 'm2_const']
+        expected5 = 100
+        msg5 = f'Expected Value in {name5}:...{expected5} and the actual Result was:...{actual5}'
+
+        assert actual5 == expected5, msg5
+
+        # Expected results : Legacy
+        name6 = df.loc[12, 'colonia']
+        actual6 = df.loc[12, 'm2_const']
+        expected6 = 85
+        msg6 = f'Expected Value in {name6}:...{expected6} and the actual Result was:...{actual6}'
+
+        assert actual6 == expected6, msg6
