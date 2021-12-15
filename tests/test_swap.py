@@ -40,7 +40,13 @@ class TestSwapZeroValues(object):
 
         assert actual == expected, msg
 
-        # Expected results : Puerta de Hiero
+        # |----------------------------------------------------------------------|
+        # |This are the expected values result after the transformation Data.    |
+        # |This Values was obtained from a regular mean operation.               |
+        # |----------------------------------------------------------------------|
+
+        # Expected results of 500+510/2 = 505 : Puerta de Hiero
+        # 3 rows exist, two have values and 1 have zero
         name1 = df.loc[2, 'colonia']
         actual1 = df.loc[2, 'm2_terreno']
         expected1 = 505
@@ -48,7 +54,8 @@ class TestSwapZeroValues(object):
 
         assert actual1 == expected1, msg1
 
-        # Expected results : Loma Larga
+        # Expected results 200+210/2 = 205 : Loma Larga
+        # 3 rows exist, two have values and 1 have zero
         name2 = df.loc[5, 'colonia']
         actual2 = df.loc[5, 'm2_terreno']
         expected2 = 205
@@ -56,7 +63,8 @@ class TestSwapZeroValues(object):
 
         assert actual2 == expected2, msg2
 
-        # Expected results : Valle
+        # Expected results 250/1 = 250 (Just One row) =  : Valle
+        # 2 rows exist, one have values and 1 have zero
         name3 = df.loc[7, 'colonia']
         actual3 = df.loc[7, 'm2_terreno']
         expected3 = 250
@@ -64,7 +72,8 @@ class TestSwapZeroValues(object):
 
         assert actual3 == expected3, msg3
 
-        # Expected results : Zero1
+        # Expected results 0 = 0 : Zero1
+        # 1 row exist, one have zero values (that's it!, no more data  ZEROOOOOOO!)
         name4 = df.loc[8, 'colonia']
         actual4 = df.loc[8, 'm2_terreno']
         expected4 = 0
@@ -91,6 +100,7 @@ class TestSwapZeroValues(object):
         assert actual == expected, msg
 
         # Expected results : Puerta de Hiero
+        # 3 rows exist, two have values and 1 have zero
         name1 = df.loc[2, 'colonia']
         actual1 = df.loc[2, 'm2_const']
         expected1 = 225
@@ -98,7 +108,8 @@ class TestSwapZeroValues(object):
 
         assert actual1 == expected1, msg1
 
-        # Expected results : Loma Larga
+        # Expected results 220+230/2 = 215 AND 0 : Loma Larga
+        # 3 rows exist, two have values and 1 have zero
         name2 = df.loc[5, 'colonia']
         actual2 = df.loc[5, 'm2_const']
         expected2 = 215
@@ -106,7 +117,8 @@ class TestSwapZeroValues(object):
 
         assert actual2 == expected2, msg2
 
-        # Expected results : Valle
+        # Expected results 240/1 = 85 AND 0: Valle
+        # 2 rows exist, one have values and 1 have zero
         name3 = df.loc[7, 'colonia']
         actual3 = df.loc[7, 'm2_const']
         expected3 = 240
@@ -114,7 +126,8 @@ class TestSwapZeroValues(object):
 
         assert actual3 == expected3, msg3
 
-        # Expected results : Zero1
+        # Expected results 0 = 0: Zero1
+        # 1 rows exist, one have ZERO values.
         name4 = df.loc[8, 'colonia']
         actual4 = df.loc[8, 'm2_const']
         expected4 = 0
@@ -122,7 +135,8 @@ class TestSwapZeroValues(object):
 
         assert actual4 == expected4, msg4
 
-        # Expected results : Zero2
+        # Expected results 0 = 0 : Zero2
+        # 1 rows exist, one have ZERO values.
         name5 = df.loc[9, 'colonia']
         actual5 = df.loc[9, 'm2_const']
         expected5 = 0
@@ -130,7 +144,8 @@ class TestSwapZeroValues(object):
 
         assert actual5 == expected5, msg5
 
-        # Expected results : Legacy
+        # Expected results 85+85/2 = 85 AND 0: Legacy
+        # 2 rows exist, TWO have values
         name6 = df.loc[12, 'colonia']
         actual6 = df.loc[12, 'm2_const']
         expected6 = 85
@@ -157,6 +172,7 @@ class TestSwapZeroValues(object):
         assert actual == expected, msg
 
         # Expected results : Puerta de Hiero
+        # 3 rows exist, two have values and 1 have zero
         name1 = df.loc[2, 'colonia']
         actual1 = df.loc[2, 'm2_const']
         expected1 = 225
@@ -164,7 +180,8 @@ class TestSwapZeroValues(object):
 
         assert actual1 == expected1, msg1
 
-        # Expected results : Loma Larga
+        # Expected results 220+230/2 = 215 AND 0 : Loma Larga
+        # 3 rows exist, two have values and 1 have zero
         name2 = df.loc[5, 'colonia']
         actual2 = df.loc[5, 'm2_const']
         expected2 = 215
@@ -172,7 +189,8 @@ class TestSwapZeroValues(object):
 
         assert actual2 == expected2, msg2
 
-        # Expected results : Valle
+        # Expected results 240/1 = 85 AND 0: Valle
+        # 2 rows exist, one have values and 1 have zero
         name3 = df.loc[7, 'colonia']
         actual3 = df.loc[7, 'm2_const']
         expected3 = 240
@@ -180,7 +198,8 @@ class TestSwapZeroValues(object):
 
         assert actual3 == expected3, msg3
 
-        # Expected results : Zero1
+        # Expected results 0 = 0: Zero1
+        # 1 rows exist, one have ZERO values.
         name4 = df.loc[8, 'colonia']
         actual4 = df.loc[8, 'm2_const']
         expected4 = 0
@@ -189,6 +208,8 @@ class TestSwapZeroValues(object):
         assert actual4 == expected4, msg4
 
         # Expected results : Zero2
+        # 1 rows exist, one have values ZERO VALUES but has activate the alternative_value_complete that
+        # takes the target value the column name m2_terreno column that have the value of 100.
         name5 = df.loc[9, 'colonia']
         actual5 = df.loc[9, 'm2_const']
         expected5 = 100
@@ -196,7 +217,8 @@ class TestSwapZeroValues(object):
 
         assert actual5 == expected5, msg5
 
-        # Expected results : Legacy
+        # Expected results 85+85/2 = 85 AND 0: Legacy
+        # 2 rows exist, TWO have values
         name6 = df.loc[12, 'colonia']
         actual6 = df.loc[12, 'm2_const']
         expected6 = 85

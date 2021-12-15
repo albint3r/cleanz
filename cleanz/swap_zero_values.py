@@ -43,7 +43,7 @@ def swap_zerovalues_to_mean(dataframe: pd.DataFrame, column_name: str, min_searc
     # Select the Zero Values Column
     zero_values_column = dataframe[column_name] <= min_search_value
 
-    # Only used if is necessary to add a type of listing for the subset
+    # Adds an additional subset to the Dataframe adding + the type of listing
     if type_of_listing_val is not None:
         type_of_listing = dataframe['tipo_inmueble'] == type_of_listing_val
 
@@ -51,7 +51,7 @@ def swap_zerovalues_to_mean(dataframe: pd.DataFrame, column_name: str, min_searc
         list_zone_zero_vals = dataframe.loc[(zero_values_column & type_of_listing), 'colonia'].unique()
         # Count total of Missing Values: -> n
         star_total_zero_values = (zero_values_column & type_of_listing).sum()
-        doble_subset = True
+        doble_subset = True  # <- Helps to the  print statement
     else:
         # This is list creator of the name of the zones that doesn't have the value
         list_zone_zero_vals = dataframe.loc[zero_values_column, 'colonia'].unique()
@@ -63,7 +63,7 @@ def swap_zerovalues_to_mean(dataframe: pd.DataFrame, column_name: str, min_searc
 
         # Set the values to subset
         zone = dataframe['colonia'] == zone_name
-        zone_value_not_null = dataframe[column_name] > min_search_value
+        zone_value_not_null = dataframe[column_name] >= min_search_value
 
         # Calculate the mean of the columns that have values
         mean_value = np.mean(dataframe.loc[(zone & zone_value_not_null), column_name])
@@ -113,8 +113,8 @@ def swap_zerovalues_to_mean(dataframe: pd.DataFrame, column_name: str, min_searc
 
     if print_msg_results:
         # Print results of the corrections
-        print(f'\nStart total Zero Values: {star_total_zero_values}')
-        print(f'End total Zero Values: {end_total_zero_values}')
-        print(f'Total Corrected Data: {total_values_corrected}')
+        print(f'\n\n\nStart <{column_name.title()}> total Zero Values:----> {star_total_zero_values}')
+        print(f'End <{column_name.title()}> total Zero Values:----> {end_total_zero_values}')
+        print(f'Total <{column_name.title()}> Corrected Data:----> {total_values_corrected}\n\n\n')
 
     return end_total_zero_values
