@@ -140,3 +140,33 @@ def print_resume_inf(dataframe: pd.DataFrame, column_name: str, type_of_listing:
     print(f'|------------------------<{column_name.title()}>------------------------------------|')
 
     return end_total_zero_values
+
+
+def quick_swap_zero(dataframe: pd.DataFrame, target_column: str) -> pd.DataFrame:
+    """This is a Quick function to replace the zero values for the mean
+
+    Select a target column with zero values from the DataFrame and it will
+    calculate the mean of the values that not are zero. Then this mean would be added
+    to the zero values in the column.
+
+    Parameters
+    -----------
+    dataframe: pd.DataFrame:
+        The Dataframe that would be apply the function.
+
+    target_column: str
+        The name of the column in the DataFrame that have Zero Values.
+
+    Returns
+    ----------
+    DataFrame: 5 rows of the column Cleaned
+    """
+    not_zero_val = dataframe[target_column] != 0
+    mean_col = dataframe.loc[not_zero_val, target_column].mean()
+
+    dataframe[target_column].replace(0, mean_col, inplace=True)
+
+    result = dataframe[target_column]
+
+    print(result)
+    return mean_col

@@ -1,5 +1,5 @@
 import pytest
-from cleanz.swap_zero_values import swap_zerovalues_to_mean
+from cleanz.swap_zero_values import swap_zerovalues_to_mean, quick_swap_zero
 import pandas as pd
 
 
@@ -186,7 +186,8 @@ class TestSwapZeroValues(object):
         df = setup_df
 
         # Total Zero Remaining Results expected : 1
-        actual = swap_zerovalues_to_mean(dataframe=df, column_name='m2_const', min_search_value=10, alternative_value_complete='m2_terreno')
+        actual = swap_zerovalues_to_mean(dataframe=df, column_name='m2_const', min_search_value=10,
+                                         alternative_value_complete='m2_terreno')
         expected = 1
         msg = f'Expected Value:...{expected} and the actual Result was:...{actual}'
 
@@ -246,3 +247,21 @@ class TestSwapZeroValues(object):
         msg6 = f'Expected Value in {name6}:...{expected6} and the actual Result was:...{actual6}'
 
         assert actual6 == expected6, msg6
+
+    def test_quick_swap_zero(self, setup_df: pd.DataFrame):
+        """Test the quick swap zero function
+
+        Parameters
+        ----------
+        setup_df: pandas.DataFrame
+            Is the test tabular data for the tests.
+        """
+        # Create DataFrame to test
+        df = setup_df
+
+        # Total Zero Remaining Results expected : 280
+        actual = quick_swap_zero(df, 'm2_terreno')
+        expected = 295
+        msg = f'Expected Value:...{expected} and the actual Result was:...{actual}'
+
+        assert actual == expected, msg

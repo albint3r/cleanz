@@ -1,9 +1,11 @@
-import numpy as np
+"""Wrapper function for Resumen info"""
 
 
 def df_resume_repare(original_function):
     """Wrapper to show the stats"""
     def wrapper_function(*arg, **kwargs):
+
+        # Identify if the user add the values to start the calculation
         dataframe = kwargs.get('dataframe')
         target_col_name = kwargs.get('column_name')
         type_of_listing = kwargs.get('type_of_listing_val')
