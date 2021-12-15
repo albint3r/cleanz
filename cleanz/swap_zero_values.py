@@ -39,6 +39,9 @@ def swap_zerovalues_to_mean(dataframe: pd.DataFrame, column_name: str, min_searc
     ---------
     int
     """
+    # Len initial dataframe size and after that this would be subtracted by the final total of missing values
+    # This helps to calculate the percentage of missing values over all the data.
+    init_total_rows = len(dataframe)
 
     # Select the Zero Values Column
     zero_values_column = dataframe[column_name] <= min_search_value
@@ -102,19 +105,25 @@ def swap_zerovalues_to_mean(dataframe: pd.DataFrame, column_name: str, min_searc
     # Calculate again the 0 Values remaining in the DataFrame
     corroborate_zero_val = dataframe[column_name] <= min_search_value  # <- Corroborate the Cleaning Rows
 
-    # Count the Missing Data Again
-    if doble_subset:
-        end_total_zero_values = (corroborate_zero_val & type_of_listing).sum()
-    else:
-        end_total_zero_values = corroborate_zero_val.sum()
-
-    # Subtract the initial zero values with the result
-    total_values_corrected = star_total_zero_values - end_total_zero_values
-
+    # Count and Print the Results of the Swap Zero Values for Mean Values
     if print_msg_results:
-        # Print results of the corrections
-        print(f'\n\n\nStart <{column_name.title()}> total Zero Values:----> {star_total_zero_values}')
-        print(f'End <{column_name.title()}> total Zero Values:----> {end_total_zero_values}')
-        print(f'Total <{column_name.title()}> Corrected Data:----> {total_values_corrected}\n\n\n')
+        if doble_subset:
+            end_total_zero_values = (corroborate_zero_val & type_of_listing).sum()
+        else:
+            end_total_zero_values = corroborate_zero_val.sum()
 
-    return end_total_zero_values
+        # Subtract the initial zero values with the result
+        total_values_corrected = star_total_zero_values - end_total_zero_values
+        percentage_values_corrected = (total_values_corrected / star_total_zero_values) * 100
+        percentage_of_missing_data = (star_total_zero_values / init_total_rows) * 100
+
+        # Print results of the corrections
+        print(f'|------------------------<{column_name.title()}>------------------------------------|')
+        print(f'\n\nStart total rows with: Zero Values ----> {star_total_zero_values}')
+        print(f'End total rows with: Zero Values:----> {end_total_zero_values}')
+        print(f'Total Data Repare:----> {total_values_corrected}\n')
+        print(f'Percentage Data Repare:---->  {np.round(percentage_values_corrected)}%')
+        print(f'Percentage of Missing General Data in Table:----> {np.round(percentage_of_missing_data)}%\n\n')
+        print(f'|------------------------<{column_name.title()}>------------------------------------|')
+
+        return end_total_zero_values
