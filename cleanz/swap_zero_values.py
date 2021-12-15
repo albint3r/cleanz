@@ -1,10 +1,14 @@
 import pandas as pd
 import numpy as np
+from typing import Union, Optional
+from cleanz.wrap_resume import df_resume_repare
 
+ns = Union[str, None]  # <- Create STR/None Data Type
 
+@df_resume_repare
 def swap_zerovalues_to_mean(dataframe: pd.DataFrame, column_name: str, min_search_value: int = 0,
                             type_of_listing_val: str = None, alternative_value_complete: str = None,
-                            print_msg_results: bool = True) -> int:
+                            print_resume: bool = True) -> str:
     """ Swap the zero values for the mean of the area
 
     Select a Column name and add the minimum values you want to change for the mean in the area.
@@ -32,7 +36,7 @@ def swap_zerovalues_to_mean(dataframe: pd.DataFrame, column_name: str, min_searc
         This is the name of a column that you want to substitute the missing value for this.
         (Optional: Default = None)
 
-    print_msg_results: bool:
+    print_resume: bool:
         If is True you will see a output msg to corroborate all the work
 
     Returns
@@ -45,6 +49,7 @@ def swap_zerovalues_to_mean(dataframe: pd.DataFrame, column_name: str, min_searc
 
     # Select the Zero Values Column
     zero_values_column = dataframe[column_name] <= min_search_value
+    type_of_listing = None
 
     # Adds an additional subset to the Dataframe adding + the type of listing
     if type_of_listing_val is not None:
@@ -54,13 +59,11 @@ def swap_zerovalues_to_mean(dataframe: pd.DataFrame, column_name: str, min_searc
         list_zone_zero_vals = dataframe.loc[(zero_values_column & type_of_listing), 'colonia'].unique()
         # Count total of Missing Values: -> n
         star_total_zero_values = (zero_values_column & type_of_listing).sum()
-        doble_subset = True  # <- Helps to the  print statement
     else:
         # This is list creator of the name of the zones that doesn't have the value
         list_zone_zero_vals = dataframe.loc[zero_values_column, 'colonia'].unique()
         # Count total of Missing Values: -> n
         star_total_zero_values = zero_values_column.sum()
-        doble_subset = False
 
     for zone_name in list_zone_zero_vals:
 
@@ -99,31 +102,41 @@ def swap_zerovalues_to_mean(dataframe: pd.DataFrame, column_name: str, min_searc
                 dataframe.loc[(zone & zero_values_column), column_name] = 0
                 msg = f'{zone_name}:..........0 m2'
 
-        if print_msg_results:
+        if print_resume:
             print(msg)
+
+    if print_resume:
+        return print_resume_inf(dataframe, column_name, type_of_listing, min_search_value,
+                                init_total_rows, star_total_zero_values)
+
+
+def print_resume_inf(dataframe: pd.DataFrame, column_name: str, type_of_listing: Optional[ns],
+                     min_search_value: int, init_total_rows: int,
+                     star_total_zero_values: int) -> str:
+    """If is True prints the Resume of the function swap_zerovalues_to_mean"""
 
     # Calculate again the 0 Values remaining in the DataFrame
     corroborate_zero_val = dataframe[column_name] <= min_search_value  # <- Corroborate the Cleaning Rows
 
     # Count and Print the Results of the Swap Zero Values for Mean Values
-    if print_msg_results:
-        if doble_subset:
-            end_total_zero_values = (corroborate_zero_val & type_of_listing).sum()
-        else:
-            end_total_zero_values = corroborate_zero_val.sum()
 
-        # Subtract the initial zero values with the result
-        total_values_corrected = star_total_zero_values - end_total_zero_values
-        percentage_values_corrected = (total_values_corrected / star_total_zero_values) * 100
-        percentage_of_missing_data = (star_total_zero_values / init_total_rows) * 100
+    if type_of_listing is not None:
+        end_total_zero_values = (corroborate_zero_val & type_of_listing).sum()
+    else:
+        end_total_zero_values = corroborate_zero_val.sum()
 
-        # Print results of the corrections
-        print(f'|------------------------<{column_name.title()}>------------------------------------|')
-        print(f'\n\nStart total rows with: Zero Values ----> {star_total_zero_values}')
-        print(f'End total rows with: Zero Values:----> {end_total_zero_values}')
-        print(f'Total Data Repare:----> {total_values_corrected}\n')
-        print(f'Percentage Data Repare:---->  {np.round(percentage_values_corrected)}%')
-        print(f'Percentage of Missing General Data in Table:----> {np.round(percentage_of_missing_data)}%\n\n')
-        print(f'|------------------------<{column_name.title()}>------------------------------------|')
+    # Subtract the initial zero values with the result
+    total_values_corrected = star_total_zero_values - end_total_zero_values
+    percentage_values_corrected = (total_values_corrected / star_total_zero_values) * 100
+    percentage_of_missing_data = (star_total_zero_values / init_total_rows) * 100
 
-        return end_total_zero_values
+    # Print results of the corrections
+    print(f'|------------------------<{column_name.title()}>------------------------------------|')
+    print(f'\n\nStart total rows with: Zero Values ----> {star_total_zero_values}')
+    print(f'End total rows with: Zero Values:----> {end_total_zero_values}')
+    print(f'Total Data Repare:----> {total_values_corrected}\n')
+    print(f'Percentage Data Repare:---->  {np.round(percentage_values_corrected)}%')
+    print(f'Percentage of Missing General Data in Table:----> {np.round(percentage_of_missing_data)}%\n\n')
+    print(f'|------------------------<{column_name.title()}>------------------------------------|')
+
+    return end_total_zero_values

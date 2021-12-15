@@ -22,6 +22,26 @@ class TestSwapZeroValues(object):
 
         return pd.DataFrame(data)
 
+    def test_swap_zero_no_print(self, setup_df: pd.DataFrame):
+        """The print function Resume
+
+        Parameters
+        ----------
+        setup_df: pandas.DataFrame
+            Is the test tabular data for the tests.
+        """
+        # Create DataFrame to test
+        df = setup_df
+
+        # Total Zero Remaining Results expected : None
+        actual = swap_zerovalues_to_mean(dataframe=df, column_name='m2_terreno', min_search_value=10,
+                                         type_of_listing_val='Casa',
+                                         print_resume=False)  # <- This is the test
+        expected = None
+        msg = f'Expected Value:...{expected} and the actual Result was:...{actual}'
+
+        assert actual == expected, msg
+
     def test_swap_zero_m2(self, setup_df: pd.DataFrame):
         """Test the m2 complete works correctly
 
@@ -34,7 +54,8 @@ class TestSwapZeroValues(object):
         df = setup_df
 
         # Total Zero Remaining Results expected : 1
-        actual = swap_zerovalues_to_mean(df, 'm2_terreno', min_search_value=10, type_of_listing_val='Casa')
+        actual = swap_zerovalues_to_mean(dataframe=df, column_name='m2_terreno', min_search_value=10,
+                                         type_of_listing_val='Casa')
         expected = 1
         msg = f'Expected Value:...{expected} and the actual Result was:...{actual}'
 
@@ -92,10 +113,8 @@ class TestSwapZeroValues(object):
         # Create DataFrame to test
         df = setup_df
 
-
-
         # Total Zero Remaining Results expected : 1
-        actual = swap_zerovalues_to_mean(df, 'm2_const', min_search_value=10)
+        actual = swap_zerovalues_to_mean(dataframe=df, column_name='m2_const', min_search_value=10)
         expected = 2
         msg = f'Expected Value:...{expected} and the actual Result was:...{actual}'
 
@@ -167,7 +186,7 @@ class TestSwapZeroValues(object):
         df = setup_df
 
         # Total Zero Remaining Results expected : 1
-        actual = swap_zerovalues_to_mean(df, 'm2_const', min_search_value=10, alternative_value_complete='m2_terreno')
+        actual = swap_zerovalues_to_mean(dataframe=df, column_name='m2_const', min_search_value=10, alternative_value_complete='m2_terreno')
         expected = 1
         msg = f'Expected Value:...{expected} and the actual Result was:...{actual}'
 
