@@ -1,6 +1,6 @@
 import pytest
 import pandas as pd
-from cleanz.quality_data_selector import replace_drop_zero, count_drop_zero
+from cleanz.quality_data_selector import drop_zero, count_drop_zero
 
 
 class TestQualityData(object):
@@ -41,24 +41,23 @@ class TestQualityData(object):
         msg = f'The expected result is: {expected} and you have  {actual}'
         assert actual == expected, msg
 
-    def test_replace_drop_zero(self, setup_df: pd.DataFrame):
+    def test_drop_zero(self, setup_df: pd.DataFrame):
         """Test the fucntion Quality Data Selector"""
 
         df = setup_df
 
-        actual = len(replace_drop_zero(df, ['m2_const', 'm2_terreno']))
+        actual = len(drop_zero(df, {'m2_const': 0, 'm2_terreno': 0}))
         expected = 8  # <- Rows
         msg = f'The expected result is: {expected} and you have  {actual}'
         assert actual == expected, msg
 
-    def test_replace_drop_zero_diff(self, setup_df: pd.DataFrame):
+    def test_drop_zero_diff(self, setup_df: pd.DataFrame):
         """Test the diferencen between the initial data and the final result"""
 
         df = setup_df
         initial_len_df = len(df)
 
-        actual = initial_len_df - len(replace_drop_zero(df, ['m2_const', 'm2_terreno']))
+        actual = initial_len_df - len(drop_zero(df, {'m2_const': 0, 'm2_terreno': 0}))
         expected = 5  # <- Rows
         msg = f'The expected result is: {expected} and you have  {actual}'
         assert actual == expected, msg
-

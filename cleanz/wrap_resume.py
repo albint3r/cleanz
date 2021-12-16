@@ -35,3 +35,21 @@ def df_resume_repare(original_function):
 
     return wrapper_function
 
+
+def total_data_remaining(original_function): # TODO this function need to be repair
+    """Count the end data remaining with all the transformations"""
+
+    def wrapper_function(*args, **kwargs):
+        # Set up the data frame to count
+        df = kwargs.get('dataframe')
+        start_total_vals = len(df)
+        # Apply all the transformation
+        original_function(df)
+        # Count the final length of the data frame
+        end_total_vals = len(kwargs.get('dataframe'))
+
+        print(f'This is the final data:...{start_total_vals - end_total_vals}')
+
+    return wrapper_function
+
+

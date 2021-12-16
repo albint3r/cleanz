@@ -23,14 +23,16 @@ def count_drop_zero(dataframe: pd.DataFrame, target_cols: list) -> tuple[int, in
     copy_df = dataframe[target_cols].replace(0, np.nan)
     count_drop_nan = len(copy_df[target_cols].dropna(how='all'))
     result = start_total_vals - count_drop_nan
-
+    print(f'\n\n------------{target_cols}------------------')
     print(f'Total rows DataFrame:...{start_total_vals}')
     print(f'Total rows remaining:...{count_drop_nan}')
-    print(f'Total rows drop it:...{result}')
+    print(f'Total rows drop it:...{result}\n\n')
+    print(f'--------------------------------------------')
 
     return result, count_drop_nan
 
-def replace_drop_zero(dataframe: pd.DataFrame, target_cols: list) -> pd.DataFrame:
+
+def drop_zero(dataframe: pd.DataFrame, target_cols: dict) -> pd.DataFrame:
     """Check the quality of the final data Swap Zero Values
 
     First change the 0 values for Nan Values. Then it would drop it the row that have
@@ -43,8 +45,8 @@ def replace_drop_zero(dataframe: pd.DataFrame, target_cols: list) -> pd.DataFram
     dataframe: pd.DataFrame:
         This is the dataframe to drop the columns
 
-    target_cols: list:
-        This is the list of the columns you want to drop it.
+    target_cols: dict:
+        This is a dict with the name of the column and the value you want to drop.
 
     Returns
     ----------
@@ -52,9 +54,9 @@ def replace_drop_zero(dataframe: pd.DataFrame, target_cols: list) -> pd.DataFram
     """
 
     # Convert Zero to NaN to then drop it
-    dataframe[target_cols] = dataframe[target_cols].replace(0, np.nan)
+    dataframe.replace(target_cols, np.nan, inplace=True)
     # Drop NaN Values
-    result = dataframe[target_cols].dropna(how='all')
+    dataframe.dropna(subset= list(target_cols.keys()) , how='all', inplace=True)
 
-    return result
+    return dataframe
 
