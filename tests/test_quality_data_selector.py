@@ -41,23 +41,33 @@ class TestQualityData(object):
         msg = f'The expected result is: {expected} and you have  {actual}'
         assert actual == expected, msg
 
-    def test_drop_zero(self, setup_df: pd.DataFrame):
-        """Test the fucntion Quality Data Selector"""
+    def test_drop_zero_row_to_keep(self, setup_df: pd.DataFrame):
+        """Test if the final table have the row it expects it have"""
 
         df = setup_df
-
         actual = len(drop_zero(df, {'m2_const': 0, 'm2_terreno': 0}))
         expected = 8  # <- Rows
         msg = f'The expected result is: {expected} and you have  {actual}'
         assert actual == expected, msg
 
     def test_drop_zero_diff(self, setup_df: pd.DataFrame):
-        """Test the diferencen between the initial data and the final result"""
+        """Test the differences between the initial DataFrame and the Result"""
 
         df = setup_df
-        initial_len_df = len(df)
+        initial_len_df = len(df)  # <- 13 total
 
         actual = initial_len_df - len(drop_zero(df, {'m2_const': 0, 'm2_terreno': 0}))
         expected = 5  # <- Rows
+        msg = f'The expected result is: {expected} and you have  {actual}'
+        assert actual == expected, msg
+
+    def test_drop_zero_only_delete_two_rows_nan(self, setup_df: pd.DataFrame):
+        """Test if the Function only delete the row that have the two rows with the missing
+        values."""
+
+        df = setup_df
+        drop_zero(df, {'m2_const': 0, 'm2_terreno': 0})
+        actual = df.loc[9, 'colonia']
+        expected = 'zero_2'  # <- Rows
         msg = f'The expected result is: {expected} and you have  {actual}'
         assert actual == expected, msg

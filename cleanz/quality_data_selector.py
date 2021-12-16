@@ -58,5 +58,8 @@ def drop_zero(dataframe: pd.DataFrame, target_cols: dict) -> pd.DataFrame:
     # Drop NaN Values
     dataframe.dropna(subset= list(target_cols.keys()) , how='all', inplace=True)
 
+    # Add again the 0 to the NaN remain values
+    dataframe.fillna(0, inplace=True)
+
     return dataframe
 
