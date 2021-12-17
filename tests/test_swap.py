@@ -27,8 +27,13 @@ class TestSwapZeroValues(object):
 
         Parameters
         ----------
-        setup_df: pandas.DataFrame
-            Is the test tabular data for the tests.
+        setup_df: pd.DataFrame :
+            Is the dataFrame Setup that would be use it to the test
+
+        Returns
+        -------
+
+        
         """
         # Create DataFrame to test
         df = setup_df
@@ -47,8 +52,13 @@ class TestSwapZeroValues(object):
 
         Parameters
         ----------
-        setup_df: pandas.DataFrame
-            Is the test tabular data for the tests.
+        setup_df: pd.DataFrame :
+            Is the dataFrame Setup that would be use it to the test
+
+        Returns
+        -------
+
+        
         """
         # Create DataFrame to test
         df = setup_df
@@ -70,7 +80,7 @@ class TestSwapZeroValues(object):
         # 3 rows exist, two have values and 1 have zero
         name1 = df.loc[2, 'colonia']
         actual1 = df.loc[2, 'm2_terreno']
-        expected1 = 505 # (510, 505)
+        expected1 = 505  # (510, 505)
         msg1 = f'Expected Value in {name1}:...{expected1} and the actual Result was:...{actual1}'
 
         assert actual1 == expected1, msg1
@@ -107,8 +117,13 @@ class TestSwapZeroValues(object):
 
         Parameters
         ----------
-        setup_df: pandas.DataFrame
-            Is the test tabular data for the tests.
+        setup_df: pd.DataFrame :
+            Is the dataFrame Setup that would be use it to the test
+
+        Returns
+        -------
+
+        
         """
         # Create DataFrame to test
         df = setup_df
@@ -179,8 +194,13 @@ class TestSwapZeroValues(object):
 
         Parameters
         ----------
-        setup_df: pandas.DataFrame
-            Is the test tabular data for the tests.
+        setup_df: pd.DataFrame :
+            Is the dataFrame Setup that would be use it to the test
+
+        Returns
+        -------
+
+        
         """
         # Create DataFrame to test
         df = setup_df
@@ -253,8 +273,13 @@ class TestSwapZeroValues(object):
 
         Parameters
         ----------
-        setup_df: pandas.DataFrame
-            Is the test tabular data for the tests.
+        setup_df: pd.DataFrame :
+            Is the dataFrame Setup that would be use it to the test
+
+        Returns
+        -------
+
+        
         """
         # Create DataFrame to test
         df = setup_df
@@ -269,6 +294,13 @@ class TestSwapZeroValues(object):
     def test_column_zero_checker(self):
         """This function Identify if it still haves missing values. And Complete the missing values
         with another target column in the table.
+
+        Parameters
+        ----------
+
+        Returns
+        -------
+
         """
         # Create DataFrame to test
         data = {'colonia': ['Puerta de Hierro', 'Puerta de Hierro', 'Puerta de Hierro', 'Loma Larga', 'Loma Larga',

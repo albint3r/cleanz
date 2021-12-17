@@ -2,8 +2,33 @@
 
 
 def df_resume_repare(original_function):
-    """Wrapper to show the stats"""
+    """Wrapper to show the stats
+
+    Parameters
+    ----------
+    original_function :
+        
+
+    Returns
+    -------
+
+    
+    """
     def wrapper_function(*arg, **kwargs):
+        """
+
+        Parameters
+        ----------
+        *arg :
+            
+        **kwargs :
+            
+
+        Returns
+        -------
+
+        
+        """
 
         # Identify if the user add the values to start the calculation
         dataframe = kwargs.get('dataframe')
@@ -37,9 +62,34 @@ def df_resume_repare(original_function):
 
 
 def total_data_remaining(original_function): # TODO this function need to be repair
-    """Count the end data remaining with all the transformations"""
+    """Count the end data remaining with all the transformations
+
+    Parameters
+    ----------
+    original_function :
+        
+
+    Returns
+    -------
+
+    
+    """
 
     def wrapper_function(*args, **kwargs):
+        """
+
+        Parameters
+        ----------
+        *args :
+            
+        **kwargs :
+            
+
+        Returns
+        -------
+
+        
+        """
         # Set up the data frame to count
         df = kwargs.get('dataframe')
         start_total_vals = len(df)

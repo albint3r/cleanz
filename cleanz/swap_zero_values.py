@@ -10,39 +10,41 @@ ns = Union[str, None]  # <- Create STR/None Data Type
 def swap_zerovalues_to_mean(dataframe: pd.DataFrame, column_name: str, min_search_value: int = 0,
                             type_of_listing_val: str = None, alternative_value_complete: str = None,
                             print_resume: bool = True) -> str:
-    """ Swap the zero values for the mean of the area
-
+    """Swap the zero values for the mean of the area
+    
     Select a Column name and add the minimum values you want to change for the mean in the area.
 
     Parameters
     ----------
-    dataframe: pandas.DataFrame:
+    dataframe: pd.DataFrame :
         Is the dataframe you will use to clean.
 
-    column_name: str:
+    column_name: str :
         Is the name of the column that contain the Zero values Rows. You need to selected to swap for the mean
         values that contains data.
 
-    min_search_value: int:
+    min_search_value: int :
         Is the minimal value you want to change for the mean. By the default is 0, but in some cases
         is good idea to add more range to identify odd values.
-        (Optional: Default = 0)
+        (Default value = 0)
 
-    type_of_listing_val: str:
+    type_of_listing_val: str :
         This select a type of listing to create a more specific subset. A good idea to use this
         is when the apartments don't need to be modify.
-        (Optional: Default = None)
+         (Default value = None)
 
-    alternative_value_complete: str:
+    alternative_value_complete: str :
         This is the name of a column that you want to substitute the missing value for this.
-        (Optional: Default = None)
+         (Default value = None)
 
-    print_resume: bool:
+    print_resume: bool :
         If is True you will see a output msg to corroborate all the work
+         (Default value = True)
 
     Returns
-    ---------
-    int
+    -------
+
+    
     """
     # Len initial dataframe size and after that this would be subtracted by the final total of missing values
     # This helps to calculate the percentage of missing values over all the data.
@@ -114,7 +116,27 @@ def swap_zerovalues_to_mean(dataframe: pd.DataFrame, column_name: str, min_searc
 def print_resume_inf(dataframe: pd.DataFrame, column_name: str, type_of_listing: Optional[ns],
                      min_search_value: int, init_total_rows: int,
                      star_total_zero_values: int) -> str:
-    """If is True prints the Resume of the function swap_zerovalues_to_mean"""
+    """If is True prints the Resume of the function swap_zerovalues_to_mean
+
+    Parameters
+    ----------
+    dataframe: pd.DataFrame :
+        
+    column_name: str :
+        
+    type_of_listing: Optional[ns] :
+        
+    min_search_value: int :
+        
+    init_total_rows: int :
+        
+    star_total_zero_values: int :
+        
+
+    Returns
+    -------
+
+    """
 
     # Calculate again the 0 Values remaining in the DataFrame
     corroborate_zero_val = dataframe[column_name] <= min_search_value  # <- Corroborate the Cleaning Rows
@@ -145,22 +167,22 @@ def print_resume_inf(dataframe: pd.DataFrame, column_name: str, type_of_listing:
 
 def quick_swap_zero(dataframe: pd.DataFrame, target_column: str) -> pd.DataFrame:
     """This is a Quick function to replace the zero values for the mean
-
+    
     Select a target column with zero values from the DataFrame and it will
     calculate the mean of the values that not are zero. Then this mean would be added
     to the zero values in the column.
 
     Parameters
-    -----------
-    dataframe: pd.DataFrame:
+    ----------
+    dataframe : pd.DataFrame:
         The Dataframe that would be apply the function.
-
-    target_column: str
+    target_column : str
         The name of the column in the DataFrame that have Zero Values.
 
     Returns
-    ----------
-    DataFrame: 5 rows of the column Cleaned
+    -------
+
+    
     """
     not_zero_val = dataframe[target_column] != 0
     mean_col = dataframe.loc[not_zero_val, target_column].mean()
@@ -173,9 +195,23 @@ def quick_swap_zero(dataframe: pd.DataFrame, target_column: str) -> pd.DataFrame
     return mean_col
 
 
-def column_zero_checker(dataframe: pd.DataFrame, target_column: dict, alternative_value_complete: str):
+def column_zero_checker(dataframe: pd.DataFrame, target_column: dict, alternative_value_complete: str) -> None:
     """Check if it still are zero values in the column and use the alternative_target_col to fill
-    the missing values"""
+    the missing values
+
+    Parameters
+    ----------
+    dataframe: pd.DataFrame :
+        
+    target_column: dict :
+        
+    alternative_value_complete: str :
+        
+
+    Returns
+    -------
+
+    """
     # Set Dict key and values: Target Column
     k0 = list(target_column.keys())[0]
     v0 = list(target_column.values())[0]
@@ -187,6 +223,3 @@ def column_zero_checker(dataframe: pd.DataFrame, target_column: dict, alternativ
 
     subset_target = (dataframe[k0] == v0) & (dataframe[k1] == v1)
     dataframe.loc[subset_target, k1] = dataframe.loc[subset_target, avc]
-    return dataframe
-
-
