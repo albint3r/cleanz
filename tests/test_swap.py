@@ -1,5 +1,5 @@
 import pytest
-from cleanz.swap_zero_values import swap_zerovalues_to_mean, quick_swap_zero
+from cleanz.swap_zero_values import swap_zerovalues_to_mean, quick_swap_zero, column_zero_checker
 import pandas as pd
 
 
@@ -70,7 +70,7 @@ class TestSwapZeroValues(object):
         # 3 rows exist, two have values and 1 have zero
         name1 = df.loc[2, 'colonia']
         actual1 = df.loc[2, 'm2_terreno']
-        expected1 = 505
+        expected1 = 505 # (510, 505)
         msg1 = f'Expected Value in {name1}:...{expected1} and the actual Result was:...{actual1}'
 
         assert actual1 == expected1, msg1
@@ -262,6 +262,32 @@ class TestSwapZeroValues(object):
         # Total Zero Remaining Results expected : 280
         actual = quick_swap_zero(df, 'm2_terreno')
         expected = 295
+        msg = f'Expected Value:...{expected} and the actual Result was:...{actual}'
+
+        assert actual == expected, msg
+
+    def test_column_zero_checker(self):
+        """This function Identify if it still haves missing values. And Complete the missing values
+        with another target column in the table.
+        """
+        # Create DataFrame to test
+        data = {'colonia': ['Puerta de Hierro', 'Puerta de Hierro', 'Puerta de Hierro', 'Loma Larga', 'Loma Larga',
+                            'Loma Larga', 'Valle', 'Valle', 'zero_1', 'zero_2', 'Legacy', 'Legacy', 'Legacy', ],
+                'm2_terreno': [500, 510, 0, 200, 210, 0, 250, 0, 0, 100, 0, 0, 0],
+                'm2_const': [220, 230, 220, 200, 230, 100, 240, 0, 0, 0, 85, 85, 0],
+                'habitaciones': [3, 3, 0, 2, 2, 0, 2, 0, 0, 0, 2, 2, 0],
+                'banos': [3, 3, 0, 2, 2, 0, 2, 0, 0, 0, 2, 0, 2],
+                'autos': [3, 3, 0, 2, 2, 0, 2, 0, 0, 0, 2, 2, 0],
+                'tipo_inmueble': ['Casa', 'Casa', 'Casa', 'Casa', 'Casa', 'Casa', 'Casa', 'Casa', 'Casa',
+                                  'Casa', 'Departamento', 'Departamento', 'Departamento']}
+
+        df = pd.DataFrame(data)
+
+        # Total Zero Remaining Results expected : [220, 100]
+        column_zero_checker(df, {'tipo_inmueble': 'Casa', 'm2_terreno': 0}, 'm2_const')
+
+        actual = list(df.loc[[2, 5], 'm2_terreno'])
+        expected = [220, 100]
         msg = f'Expected Value:...{expected} and the actual Result was:...{actual}'
 
         assert actual == expected, msg

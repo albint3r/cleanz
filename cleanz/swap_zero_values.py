@@ -5,6 +5,7 @@ from cleanz.wrap_resume import df_resume_repare
 
 ns = Union[str, None]  # <- Create STR/None Data Type
 
+
 @df_resume_repare
 def swap_zerovalues_to_mean(dataframe: pd.DataFrame, column_name: str, min_search_value: int = 0,
                             type_of_listing_val: str = None, alternative_value_complete: str = None,
@@ -170,3 +171,22 @@ def quick_swap_zero(dataframe: pd.DataFrame, target_column: str) -> pd.DataFrame
 
     print(result)
     return mean_col
+
+
+def column_zero_checker(dataframe: pd.DataFrame, target_column: dict, alternative_value_complete: str):
+    """Check if it still are zero values in the column and use the alternative_target_col to fill
+    the missing values"""
+    # Set Dict key and values: Target Column
+    k0 = list(target_column.keys())[0]
+    v0 = list(target_column.values())[0]
+    k1 = list(target_column.keys())[1]
+    v1 = list(target_column.values())[1]
+
+    # Set dict keys and values Alternative Value
+    avc = alternative_value_complete
+
+    subset_target = (dataframe[k0] == v0) & (dataframe[k1] == v1)
+    dataframe.loc[subset_target, k1] = dataframe.loc[subset_target, avc]
+    return dataframe
+
+

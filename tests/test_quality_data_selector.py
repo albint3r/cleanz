@@ -46,7 +46,7 @@ class TestQualityData(object):
 
         df = setup_df
         actual = len(drop_zero(df, {'m2_const': 0, 'm2_terreno': 0}))
-        expected = 8  # <- Rows
+        expected = 8 # <- Rows
         msg = f'The expected result is: {expected} and you have  {actual}'
         assert actual == expected, msg
 
