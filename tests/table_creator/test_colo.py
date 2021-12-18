@@ -1,5 +1,6 @@
 import pandas as pd
-import numpy as np
+import os
+import shutil
 import pytest
 from cleanz.table_creator.colo import colo_table_creator
 
@@ -11,9 +12,16 @@ class TestTableCreator(object):
     def set_up(self):
         """Take the listing CSV to make the test"""
 
+        # Create a temporal directory for the File created by the function
+        os.mkdir('tests/table_creator/data/')
+
+        # Set the path of the listing
         data = 'data/clean_data/listing_17_12_2021.csv'
 
-        return pd.read_csv(data, parse_dates=['fecha_pub'])
+        yield pd.read_csv(data, parse_dates=['fecha_pub'])
+
+        # Remove File Created by the function in the Data Directory inside the Test Directory
+        shutil.rmtree('tests/table_creator/data/')
 
     def test_colo_avg_price_rent(self, set_up):
         """Test the function create the correct avg price by type fo listing: Rent or Buy
@@ -126,3 +134,28 @@ class TestTableCreator(object):
         expected_avg_m2 = 183.5130890052356
         msg = f'This is the expected result:...{expected_avg_m2} and you have:...{actual_avg_m2}'
         assert actual_avg_m2 == expected_avg_m2, msg
+
+    def test_colo_file_creator(self, set_up):
+        """Test the File Result Creator
+
+        In this case it test the Buy.
+
+        Parameters
+        ----------
+        set_up :
+            Is the dataframe for all the tests
+
+        Returns
+        -------
+
+        """
+
+        df = set_up
+        # Run function
+        colo_table_creator(df, 'Casa', 'Buy', 'tests/table_creator/data/test.csv', True)
+
+        # Test
+        actual = os.path.isfile('tests/table_creator/data/test.csv')
+        expected = 'tests/table_creator/data/test.csv'
+        msg = f'This is the expected result:...{expected} and you have:...{actual}'
+        assert actual, msg
