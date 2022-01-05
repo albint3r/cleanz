@@ -1,5 +1,6 @@
 from cleanz.swap_zero_values import swap_zerovalues_to_mean, column_zero_checker
 from cleanz.quality_data_selector import drop_zero
+from cleanz.pdcolumns.columns import set_sector_inmob
 import pandas as pd
 
 
@@ -27,6 +28,11 @@ def run(dataframe: pd.DataFrame):
 
     column_zero_checker(dataframe, {'tipo_inmueble': 'Casa', 'm2_terreno': 0}, 'm2_const')
 
+    df = set_sector_inmob(dataframe)
+    
+    df.to_csv('data/listings_04_01_2022.csv')
+    
+    return df
 
 if __name__ == '__main__':
     df = pd.read_csv('data/listings_13_12_2021.csv')
